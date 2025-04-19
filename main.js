@@ -58,7 +58,7 @@ const applyStockChange = async (stock) => {
 
   const changeStock = (stock.type === 'IN' ? 1 : -1) * stock.amount
 
-  if (changeStock < 0) throw new Error('negative stock')
+  if (product.attributes.stock_available + changeStock < 0) throw new Error('negative stock')
 
   const data = {
     available_stock: product.attributes.stock_available + changeStock,
