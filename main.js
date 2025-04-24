@@ -61,7 +61,7 @@ const applyStockChange = async (stock) => {
   if (product.attributes.stock_available + changeStock < 0) throw new Error('negative stock')
 
   const data = {
-    available_stock: product.attributes.stock_available + changeStock,
+    stock_available: product.attributes.stock_available + changeStock,
   }
 
   console.log(JSON.stringify({ data }))
